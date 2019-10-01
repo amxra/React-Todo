@@ -1,4 +1,25 @@
 import React from "react";
+import styled from "styled-components";
+
+
+const StyledDiv = styled.div `
+div{
+
+    button{
+        background-color: #B19CD9;
+        border: 1px solid #B19CD9;
+        color: white;
+        padding: 0.2rem 0.5rem;
+
+        &: hover{
+            color: #B19CD9;
+            background-color: white;
+        }
+    }
+
+}
+`
+
 
 class TodoForm extends React.Component {
 
@@ -31,6 +52,7 @@ class TodoForm extends React.Component {
 
     render() {
         return (
+            <StyledDiv>
             <div>
 
                 <form onSubmit={this.add}>
@@ -41,9 +63,11 @@ class TodoForm extends React.Component {
                         onChange={this.onInputChange}
                     />
                     < button onClick={this.add} >Add Todo</ button>
+                    < button onClick={this.props.clearCompletedTodos}>Clear Completed</ button>
                 </form>
-                < button onClick={this.props.clearCompletedTodos}>Clear Completed</ button>
+                
             </div>
+            </StyledDiv>
         )
     }
 }

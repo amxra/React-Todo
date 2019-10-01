@@ -1,6 +1,23 @@
 import React from 'react';
 import TodoList from "./components/TodoComponents/TodoList";
-import TodoForm from "./components/TodoComponents/TodoForm"
+import TodoForm from "./components/TodoComponents/TodoForm";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+
+.container {
+  border: 1px solid #B19CD9;
+  width: 80%;
+  margin: 30% auto;
+  text-align: center;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 5%;
+}
+
+`
 
 
 class App extends React.Component {
@@ -80,7 +97,8 @@ class App extends React.Component {
   render() {
     console.log(this.state.todos)
     return (
-      <div>
+      <StyledDiv>
+      <div className = "container">
         <h2>Welcome to your Todo App!</h2>
         <TodoList myTodoList={this.state.todos} toggleTodo={this.toggleCompletedOfTodo} />
         <TodoForm
@@ -88,6 +106,7 @@ class App extends React.Component {
           clearCompletedTodos={this.clearCompletedTodos}
         />
       </div>
+      </StyledDiv>
     );
   }
 }
