@@ -7,8 +7,8 @@ const StyledDiv = styled.div`
 
 .container {
   border: 1px solid #B19CD9;
-  width: 80%;
-  margin: 30% auto;
+  width: 60%;
+  margin: 10% auto;
   text-align: center;
   height: 50vh;
   display: flex;
