@@ -6,16 +6,16 @@ import Todo from "./Todo"
 
 class TodoList extends React.Component {
 
-    render(){
-    return(
-        <div>
-          {
-              this.props.todoList.map(todo => {
-                  return <Todo todo = {todo}/>
-              })
-          }
-        </div>
-    )}
+    render () {
+        return (
+            <div>
+                {
+                    this.props.myTodoList.map(todo => {
+                        return <Todo todo={todo} toggleTodo={this.props.toggleTodo}/>
+                    })
+                }
+            </div>
+        );
+    }
 }
-
 export default TodoList;
